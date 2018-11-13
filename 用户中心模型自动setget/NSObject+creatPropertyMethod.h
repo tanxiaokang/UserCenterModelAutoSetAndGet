@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (creatPropertyMethod)
 
+- (void)mdf_propertyMethod:(NSArray<NSString *>*)propertys;
+
 @end
 
 NS_ASSUME_NONNULL_END

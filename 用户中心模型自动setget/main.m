@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSObject+creatPropertyMethod.h"
 #import "NSObject+Property.h"
 #import "AccountModel.h"
 
@@ -15,16 +16,11 @@ int main(int argc, const char * argv[]) {
         
         AccountModel *model = [AccountModel new];
         model.name = @"张三";
+        NSLog(@"%@",model.name);
+        
         [model mdf_creatPropertyCodeWith:@{@"name":@1,@"age":@"11"}];
         
-        NSDictionary * dic1 = @{@"key1":@"1",
-                                @"key2":@"2"};
-        NSDictionary * dic2 = @{@"key2":@"2",
-                                @"key1":@"1"};
-        if ([dic1 isEqualToDictionary:dic2]) {
-            NSLog(@"Equal contents");
-        }
-        
+        [model mdf_propertyMethod:@[@"name",@"age",@"height"]];
         NSLog(@"end");
     }
     return 0;

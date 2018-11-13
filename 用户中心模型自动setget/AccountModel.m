@@ -10,9 +10,19 @@
 
 @implementation AccountModel
 
-- (void)setName:(NSString *)name{ }
-- (NSString *)name{ return @""; }
-- (void)setAge:(NSString *)age {}
-- (NSString *)age { return @""; }
+- (void)setName:(NSString *)name{
+    [[NSUserDefaults standardUserDefaults] setObject:name forKey:@"name"];
+}
+
+- (NSString *)name{
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"name"];
+}
+
+- (void)setAge:(NSString *)age {
+    [[NSUserDefaults standardUserDefaults] setObject:age forKey:@"age"];
+}
+- (NSString *)age {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"age"];
+}
 
 @end
