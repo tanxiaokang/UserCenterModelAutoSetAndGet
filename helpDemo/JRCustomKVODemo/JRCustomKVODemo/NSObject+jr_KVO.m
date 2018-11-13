@@ -20,6 +20,7 @@
     // 1. 检查对象的类有没有相应的 setter 方法。如果没有抛出异常
     SEL setterSelector = NSSelectorFromString([self setterForGetter:key]);
     
+    
     Method setterMethod = class_getInstanceMethod([self class], setterSelector);
     
     if (!setterMethod) {

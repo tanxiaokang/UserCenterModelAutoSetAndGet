@@ -12,6 +12,8 @@
 		0C44AA2E2199BF3000261576 /* NSObject+Property.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C44AA2D2199BF3000261576 /* NSObject+Property.m */; };
 		0C44AA312199C58600261576 /* KeyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C44AA302199C58600261576 /* KeyObject.m */; };
 		0C44AA342199C9B100261576 /* NSObject+creatPropertyMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C44AA332199C9B100261576 /* NSObject+creatPropertyMethod.m */; };
+		7D7B6CAA219AACBE00688E2D /* JRObserverInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B6CA8219AACBE00688E2D /* JRObserverInfo.m */; };
+		7D7B6CAB219AACBE00688E2D /* NSObject+jr_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7B6CA9219AACBE00688E2D /* NSObject+jr_KVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,10 @@
 		0C44AA302199C58600261576 /* KeyObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyObject.m; sourceTree = "<group>"; };
 		0C44AA322199C9B100261576 /* NSObject+creatPropertyMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+creatPropertyMethod.h"; sourceTree = "<group>"; };
 		0C44AA332199C9B100261576 /* NSObject+creatPropertyMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+creatPropertyMethod.m"; sourceTree = "<group>"; };
+		7D7B6CA6219AACBE00688E2D /* NSObject+jr_KVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+jr_KVO.h"; path = "helpDemo/JRCustomKVODemo/JRCustomKVODemo/NSObject+jr_KVO.h"; sourceTree = SOURCE_ROOT; };
+		7D7B6CA7219AACBE00688E2D /* JRObserverInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRObserverInfo.h; path = helpDemo/JRCustomKVODemo/JRCustomKVODemo/JRObserverInfo.h; sourceTree = SOURCE_ROOT; };
+		7D7B6CA8219AACBE00688E2D /* JRObserverInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRObserverInfo.m; path = helpDemo/JRCustomKVODemo/JRCustomKVODemo/JRObserverInfo.m; sourceTree = SOURCE_ROOT; };
+		7D7B6CA9219AACBE00688E2D /* NSObject+jr_KVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+jr_KVO.m"; path = "helpDemo/JRCustomKVODemo/JRCustomKVODemo/NSObject+jr_KVO.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 		0C1EF1232199B96500240082 /* 用户中心模型自动setget */ = {
 			isa = PBXGroup;
 			children = (
+				7D7B6CA5219AACAA00688E2D /* CustemKVO */,
 				0C1EF1242199B96500240082 /* main.m */,
 				0C1EF12B2199B97B00240082 /* AccountModel.h */,
 				0C1EF12C2199B97B00240082 /* AccountModel.m */,
@@ -80,6 +87,17 @@
 				0C44AA302199C58600261576 /* KeyObject.m */,
 			);
 			path = "用户中心模型自动setget";
+			sourceTree = "<group>";
+		};
+		7D7B6CA5219AACAA00688E2D /* CustemKVO */ = {
+			isa = PBXGroup;
+			children = (
+				7D7B6CA7219AACBE00688E2D /* JRObserverInfo.h */,
+				7D7B6CA8219AACBE00688E2D /* JRObserverInfo.m */,
+				7D7B6CA6219AACBE00688E2D /* NSObject+jr_KVO.h */,
+				7D7B6CA9219AACBE00688E2D /* NSObject+jr_KVO.m */,
+			);
+			path = CustemKVO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +159,10 @@
 				0C1EF1252199B96500240082 /* main.m in Sources */,
 				0C44AA2E2199BF3000261576 /* NSObject+Property.m in Sources */,
 				0C44AA312199C58600261576 /* KeyObject.m in Sources */,
+				7D7B6CAA219AACBE00688E2D /* JRObserverInfo.m in Sources */,
 				0C44AA342199C9B100261576 /* NSObject+creatPropertyMethod.m in Sources */,
 				0C1EF12D2199B97B00240082 /* AccountModel.m in Sources */,
+				7D7B6CAB219AACBE00688E2D /* NSObject+jr_KVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
