@@ -14,6 +14,9 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         AccountModel *model = [AccountModel new];
+        [model jr_addObserver:self key:@"" callback:^(id observer, NSString *key, id oldValue, id newValue) {
+            
+        }];
         model.name = @"张三";
         NSLog(@"%@",model.name);
  

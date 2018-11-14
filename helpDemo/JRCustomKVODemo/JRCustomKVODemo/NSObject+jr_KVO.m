@@ -19,13 +19,17 @@
     
     // 1. 检查对象的类有没有相应的 setter 方法。如果没有抛出异常
     SEL setterSelector = NSSelectorFromString([self setterForGetter:key]);
-    
+    SEL getterSelector = NSSelectorFromString(key);
     
     Method setterMethod = class_getInstanceMethod([self class], setterSelector);
+    Method getterMethod = class_getInstanceMethod([self class], getterSelector);
     
     if (!setterMethod) {
         NSLog(@"找不到该方法");
         return;
+    }
+    if (!getterMethod) {
+        NSLog(@"找不到get方法");
     }
     
     // 2. 检查对象 isa 指向的类是不是一个 KVO 类。如果不是，新建一个继承原来类的子类，并把 isa 指向这个新建的子类
@@ -38,8 +42,11 @@
     }
     
     // 3. 为kvo class添加setter方法的实现
-    const char *types = method_getTypeEncoding(setterMethod);
-    class_addMethod(clazz, setterSelector, (IMP)jr_setter, types);
+    const char *setterTypes = method_getTypeEncoding(setterMethod);
+    class_addMethod(clazz, setterSelector, (IMP)jr_setter, setterTypes);
+    const char *getterTypes = method_getTypeEncoding(getterMethod);
+    class_addMethod(clazz, getterSelector, (IMP)jr_setter, getterTypes);
+    
     
     // 4. 添加该观察者到观察者列表中
     // 4.1 创建观察者的信息
@@ -111,6 +118,7 @@ static void jr_setter(id self, SEL _cmd, id newValue)
     struct objc_super superClazz = {
         .receiver = self,
         .super_class = class_getSuperclass(object_getClass(self))
+        
     };
     
     ((void (*)(void *, SEL, id))objc_msgSendSuper)(&superClazz, _cmd, newValue);
